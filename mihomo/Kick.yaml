@@ -1,22 +1,24 @@
 # Kick 网页和观众 App
 payload:
-  # 主站、登录、API、聊天室、静态资源、回放和剪辑
+  # 主站、登录、API、聊天室、App 配置、回放和剪辑
   - 'DOMAIN-SUFFIX,kick.com'
 
-  # Amazon IVS 直播播放入口、HLS 清单与视频分片
-  # 播放入口和主要分片域名含 Kick 的 IVS 标识 fa723fc1b171
+  # Kick 的 Amazon IVS 播放入口、HLS 清单和视频分片
   - 'DOMAIN-WILDCARD,fa723fc1b171.*.playback.live-video.net'
+  - 'DOMAIN-WILDCARD,fa723fc1b171.*.playlist.live-video.net'
   - 'DOMAIN-WILDCARD,fa723fc1b171.*.hls.live-video.net'
 
-  # IVS 共用的清单、部分分片和播放器配置域名
-  - 'DOMAIN-SUFFIX,playlist.live-video.net'
-  - 'DOMAIN-SUFFIX,rufio.hls.live-video.net'
+  # iOS App 使用的 IVS 播放器端点
   - 'DOMAIN,prod.ivs-device-config.live-video.net'
+  - 'DOMAIN,global.poe.live-video.net'
+
+  # IVS 共用的分片节点
+  - 'DOMAIN-SUFFIX,rufio.hls.live-video.net'
 
   # 旧版聊天室使用的 Pusher US2 共用节点
   - 'DOMAIN,ws-us2.pusher.com'
 
-  # Kick 网页播放器的 Mux Data 统计
+  # Kick 网页和 Android 播放器的 Mux Data 统计
   - 'DOMAIN,4g1csfd6d0egt72a3mo5kgi77.litix.io'
 
   # Kick 官方 RTMPS 推流入口
